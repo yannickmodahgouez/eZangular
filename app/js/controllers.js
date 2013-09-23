@@ -2,10 +2,21 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('MyCtrl1', [function() {
+angular.module('eZangular.controllers', []).
+  controller('ViewController', [function() {
+
+  	// we handle only full view for now
+
+  	// make REST call
+
+  	//bind data to tags in partial/full/
 
   }])
-  .controller('MyCtrl2', [function() {
+  .controller('UrlAliasController', [function(){
 
-  }]);
+  	// match URL alias with location with REST CALL
+  	// locally cache the urlaliases ?
+  	// bind data with partial/full
+
+  }])
+  ;

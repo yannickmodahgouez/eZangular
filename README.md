@@ -12,7 +12,7 @@ What needs to be dealt with as for now :
 - Keeping Sexy
 
 This project is originally forked from the angular seed repository (https://github.com/angular/angular-seed)
-some cleanup will have to be done in the future.
+some cleanup will definitly have to be done in the future.
 
 # Contact
 
