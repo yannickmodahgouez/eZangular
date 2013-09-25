@@ -2,21 +2,40 @@
 
 /* Controllers */
 
-angular.module('eZangular.controllers', []).
-  controller('ViewController', [function() {
+angular.module('eZangular.controllers', ['restangular']).
+  controller('LocationController', [ '$scope', 'Restangular' ,'$route', function($scope, Restangular, $route) {
+    
+    //get the location
+    Restangular.one(eZRestPrefix + 'content').one('locations','1/'+$route.current.params.pathstring).get().
+    then(function(eZlocation){
+     
+       //get the content for name
+       Restangular.one(eZlocation.Location.Content._href.substring(1)).get().
+       then(function(eZContent){
 
-  	// we handle only full view for now
+          $scope.contentName = eZContent.Content.Name;
 
-  	// make REST call
+       });
 
-  	//bind data to tags in partial/full/
+       // get the current version for fields
+       Restangular.one(eZlocation.Location.Content._href.substring(1)).one('currentversion').get().
+       then(function(eZContentCurrentVersion){
 
-  }])
-  .controller('UrlAliasController', [function(){
+          $scope.fields = eZContentCurrentVersion.Version.Fields.field;
 
-  	// match URL alias with location with REST CALL
-  	// locally cache the urlaliases ?
-  	// bind data with partial/full
+       });
+       //get the children
+       Restangular.one(eZlocation.Location.Children._href.substring(1)).get().
+       then(function(eZLocationChildren){
+          
+          $scope.children = eZLocationChildren.LocationList.Location;
+      
+     });
 
-  }])
-  ;
+    });
+
+
+  }]);
+
+
+  

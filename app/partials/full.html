@@ -1,1 +1,15 @@
-<p>This is the partial for view 1.</p>
+<h2>{{contentName}}</h2>
+
+<h3>Fields :</h3>
+<ul class="fields">
+<li ng-repeat="field in fields" >
+<p><strong>{{field.fieldDefinitionIdentifier}} </strong>: {{field.fieldValue}} </p>
+</li>
+</ul>
+
+<h3>Children :</h3>
+<ul class="children">
+<li ng-repeat="child in children" >
+<p><a href="{{child._href}}">{{child._href}}</a></p>
+</li>
+</ul>

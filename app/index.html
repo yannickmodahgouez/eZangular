@@ -6,24 +6,20 @@
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-  <ul class="menu">
-  </ul>
 
   <div ng-view></div>
+  <hr>
+  <div>powered by eZ Publish and eZ angular <span app-version></span></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
-
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-  -->
+  
   <script src="lib/angular/angular.js"></script>
+  <script src="http://underscorejs.org/underscore.js"></script>
+  <script src="http://cdn.jsdelivr.net/restangular/latest/restangular.js"></script>
   <script src="js/eZangular.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
-  <script src="js/directives.js"></script>
 
-  <script type="text/javascript" src="http://cdn.jsdelivr.net/restangular/latest/restangular.js"></script>
 
 </body>
 </html>
