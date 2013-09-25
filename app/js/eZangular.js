@@ -10,14 +10,14 @@ var bypassCORS = true;
 var html5Mode = true;
 
 // Declare app level module which depends on filters, and services
-angular.module('eZangular', [ 'eZangular.controllers','restangular']).
+angular.module('eZangular', [ 'ngRoute','eZangular.controllers','restangular','eZangular.filters']).
   config(['$routeProvider','RestangularProvider', '$locationProvider',
   	function($routeProvider, RestangularProvider, $locationProvider ) {
 
 		//$locationProvider.html5Mode(html5Mode);
 
 	  	// pathstring routing
-	    $routeProvider.when('/content/location/:pathstring*', {templateUrl: 'partials/full.html', controller: 'LocationController'});
+	    $routeProvider.when('/content/locations/:pathstring*', {templateUrl: 'partials/full.html', controller: 'LocationController'});
 	    //$routeProvider.otherwise({redirectTo: '/'});
 
 	  	// urlAlias routing

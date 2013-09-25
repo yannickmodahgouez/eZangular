@@ -3,8 +3,8 @@
 /* Filters */
 
 angular.module('eZangular.filters', []).
-  filter('interpolate', ['version', function(version) {
+  filter('rewritePath', [ function() {
     return function(text) {
-      return String(text).replace(/\%VERSION\%/mg, version);
+      return String(text).replace('/' + eZRestPrefix, '#/');
     }
   }]);

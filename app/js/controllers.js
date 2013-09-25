@@ -6,7 +6,7 @@ angular.module('eZangular.controllers', ['restangular']).
   controller('LocationController', [ '$scope', 'Restangular' ,'$route', function($scope, Restangular, $route) {
     
     //get the location
-    Restangular.one(eZRestPrefix + 'content').one('locations','1/'+$route.current.params.pathstring).get().
+    Restangular.one(eZRestPrefix + 'content').one('locations',$route.current.params.pathstring).get().
     then(function(eZlocation){
      
        //get the content for name
